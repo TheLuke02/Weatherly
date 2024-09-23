@@ -13,3 +13,7 @@ export interface ButtonProps {
 export interface NavbarProps {
     title: string;
 }
+
+export interface WeatherResponse {
+    location: {name: string};
+}

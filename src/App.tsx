@@ -1,12 +1,10 @@
 import Navbar from './components/Navbar'
 import { useState } from 'react'
+import { WeatherResponse } from './types';
 
-interface API {
-  location?: any;
-}
 
 export default function Page() {
-  const [weather, setWeather] = useState<API>();
+  const [weather, setWeather] = useState<WeatherResponse>();
   const [isLoading, setLoading] = useState(false);
   const key = process.env.REACT_APP_KEY;
   async function getData() {
