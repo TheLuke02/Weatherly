@@ -1,14 +1,24 @@
 import { NavbarProps } from '../types'
 import React from 'react'
 
-const Navbar = ({title}: NavbarProps) => {
+export const Navbar = ({label}: NavbarProps) => {
     return (
-      <div>
-        <h1>
-          {title}
-        </h1>
-      </div>
+      <nav className='flex items-center'>
+        <div className='flex'>
+          <img className='w-20 h-20 px-1 mx-1' src='/sun.png' alt='Sun' />
+          <span className='flex items-center justify-center text-2xl text-orange-600 font-bold'>Weatherly</span>
+        </div>
+        <div className='grow text-center px-1 mx-1 text-orange-600 font-bold'>
+          <ul>
+            <li>Questo è un link</li>
+          </ul>
+        </div>  
+        <div className='flex-none text-center px-1 mx-1 text-orange-600 font-bold'>
+          <ul>
+            <li>Questo è un link</li>
+          </ul>
+        </div>            
+      </nav>
     )
   }
 
-export default Navbar

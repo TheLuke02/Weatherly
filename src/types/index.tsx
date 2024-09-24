@@ -11,7 +11,7 @@ export interface ButtonProps {
 }
 
 export interface NavbarProps {
-    title: string;
+    label: string;
 }
 
 export interface WeatherResponse {

@@ -1,4 +1,4 @@
-import Navbar from './components/Navbar'
+import {Navbar} from './components/Navbar'
 import { useState } from 'react'
 import { WeatherResponse } from './types';
 
@@ -28,16 +28,15 @@ export default function Page() {
 
   return (
     <div>
-      <div className='justify-center border-purple-600 border-8 bg-black text-orange-500 h-20'>
-        <Navbar title="Weatherly" />   
+      <div className="bg-slate-800">
+        <Navbar label="Weatherly" />   
         <form>
-        <input type="text" name="name" />
-        <button type="button" onClick={getData}>Submit</button>
-      </form>
-    </div>
-         
+          <input type="text" name="name" />
+          <button type="button" onClick={getData}>Submit</button>
+        </form>
+      </div>
     <div>
-      <h1>{isLoading || !weather || (<div><h1>{weather.location.name}</h1></div>)}</h1>
+      <h1>{isLoading || !weather || (<div className='text-6xl'><h1>{weather.location.name}</h1></div>)}</h1>
     </div>
   </div>
   )
