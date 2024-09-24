@@ -13,12 +13,16 @@ export interface ButtonProps {
 }
 
 export interface NavbarProps {
-    fetchData: () => {};
+    fetchData: (handleSubmit: string) => Promise<void>;
+    label: string;
+}
+
+export interface Submit {
     handlerSubmit: string;
     setHandlerSubmit: Dispatch<SetStateAction<string>>
-    label: string;
 }
 
 export interface WeatherResponse {
     location: {name: string};
+    current: {temp_c: number};
 }

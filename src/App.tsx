@@ -5,14 +5,13 @@ import { WeatherResponse } from './types';
 
 export default function Page() {
 
-  const [handlerSubmit, setHandlerSubmit] = useState("")
   const [weather, setWeather] = useState<WeatherResponse>();
   const [isLoading, setLoading] = useState(false);
   const key = process.env.REACT_APP_KEY;
 
-  async function getData() {
+  async function getData(handleSubmit: string) {
     setLoading(true)
-    const url = `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${handlerSubmit}&days=2&aqi=no&alerts=no`;
+    const url = `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${handleSubmit}&days=2&aqi=no&alerts=no`;
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -32,10 +31,22 @@ export default function Page() {
   return (
     <div>
       <div className="bg-slate-800">
-        <Navbar fetchData={getData} handlerSubmit={handlerSubmit} setHandlerSubmit={setHandlerSubmit} label="Weatherly" />   
+        <Navbar fetchData={getData}label="Weatherly" />   
       </div>
       <div>
-        <h1>{isLoading || !weather || (<div className='text-6xl'><h1>{weather.location.name}</h1></div>)}</h1>
+        <h1>
+          {
+            isLoading || !weather || 
+            (
+            <div className='text-6xl'>
+              <h1>
+                {weather.location.name}
+                {weather.current.temp_c}
+              </h1>
+            </div>
+            )
+          }
+        </h1>
       </div>
     </div>
   )

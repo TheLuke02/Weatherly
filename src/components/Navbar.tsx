@@ -1,11 +1,16 @@
 import { NavbarProps } from '../types'
 import React from 'react'
+import { useState } from 'react';
 
-export const Navbar = ({fetchData, handlerSubmit, setHandlerSubmit, label}: NavbarProps) => {
 
+
+export const Navbar = ({fetchData, label}: NavbarProps) => {
+
+  const [handlerSubmit, setHandlerSubmit] = useState("");
+  
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    fetchData();
+    fetchData(handlerSubmit);
   }
 
   return (
@@ -28,4 +33,3 @@ export const Navbar = ({fetchData, handlerSubmit, setHandlerSubmit, label}: Navb
     </nav>
   )
 }
-
