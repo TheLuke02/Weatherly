@@ -13,6 +13,7 @@ export interface ButtonProps {
 }
 
 export interface NavbarProps {
+    fetchData: () => {};
     handlerSubmit: string;
     setHandlerSubmit: Dispatch<SetStateAction<string>>
     label: string;

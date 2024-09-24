@@ -1,17 +1,18 @@
 import { NavbarProps } from '../types'
 import React from 'react'
 
-export const Navbar = ({handlerSubmit, setHandlerSubmit,label}: NavbarProps) => {
+export const Navbar = ({fetchData, handlerSubmit, setHandlerSubmit, label}: NavbarProps) => {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    fetchData();
   }
 
   return (
     <nav className='flex items-center justify-between gap-x-2.5 px-5'>
       <div className='flex'>
         <img className='w-14 h-14' src='/sun.png' alt='Sun' />
-        <span className='hidden md:flex items-center justify-center text-2xl text-orange-500 font-bold'>Weatherly</span>
+        <span className='hidden md:ml-3 items-center justify-center text-2xl text-orange-500 font-bold md:flex'>{label}</span>
       </div>
       <div className='flex'>
 
