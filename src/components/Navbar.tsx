@@ -1,28 +1,30 @@
 import { NavbarProps } from '../types'
 import React from 'react'
 
-export const Navbar = ({label}: NavbarProps) => {
-    return (
-      <nav className='flex items-center'>
-        <div className='flex'>
-          <img className='w-20 h-20 px-1 mx-1' src='/sun.png' alt='Sun' />
-          <span className='flex items-center justify-center text-2xl text-orange-500 font-bold'>Weatherly</span>
-        </div>
-        <div className='grow'>
+export const Navbar = ({handlerSubmit, setHandlerSubmit,label}: NavbarProps) => {
 
-          <form className='flex justify-center'>
-            <input className='w-44 rounded-full border-4 border-orange-500 bg-slate-800 py-1 px-5 text-sm font-semibold text-white !outline-none transition-all duration-700 focus:-translate-x-6 ease-out placeholder:tracking-widest focus:w-52 sm:bg-transparent sm:pr-4' placeholder='Search your city'/>
-            <button className='mx-1' type="button"><img className='h-10 w-10' src='/arrow.png' alt='Search' /></button>
-          </form>
-
-
-        </div>  
-        <div className='flex-none text-center px-1 mx-1 text-orange-500 font-bold'>
-          <ul>
-            <li>Futuro profilo utente</li>
-          </ul>
-        </div>            
-      </nav>
-    )
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
   }
+
+  return (
+    <nav className='flex items-center justify-between gap-x-2.5 px-5'>
+      <div className='flex'>
+        <img className='w-14 h-14' src='/sun.png' alt='Sun' />
+        <span className='hidden md:flex items-center justify-center text-2xl text-orange-500 font-bold'>Weatherly</span>
+      </div>
+      <div className='flex'>
+
+        <form onSubmit={handleSubmit} className='flex w-52 items-center justify-center md:w-80'>
+          <input value={handlerSubmit} onChange={(e) => {setHandlerSubmit(e.target.value)}} className='w-36 py-1 px-2 rounded-full border-2 border-orange-500 !outline-none transition-all ease-out focus:w-52 md:w-44 md:focus:w-72 text-slate-800 placeholder-slate-800 font-bold' placeholder='Search your city...'/>
+          <button className='hidden rounded-full px-2 md:block' type="submit"><img className='h-10 w-10' src='/arrow.png' alt='Search' /></button>
+        </form>
+
+      </div>  
+      <div className='flex-none text-center text-orange-500 font-bold'>
+        <span>Profilo</span>
+      </div>            
+    </nav>
+  )
+}
 

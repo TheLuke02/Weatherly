@@ -1,4 +1,6 @@
 import { MouseEventHandler } from "react"; // Catturo gli eventi nel caso ce ne fosse bisogno
+import { Dispatch, SetStateAction } from "react";
+
 
 // Tutti i tipi dei props
 
@@ -11,6 +13,8 @@ export interface ButtonProps {
 }
 
 export interface NavbarProps {
+    handlerSubmit: string;
+    setHandlerSubmit: Dispatch<SetStateAction<string>>
     label: string;
 }
 

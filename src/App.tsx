@@ -4,6 +4,9 @@ import { WeatherResponse } from './types';
 
 
 export default function Page() {
+
+  const [handlerSubmit, setHandlerSubmit] = useState("")
+
   const [weather, setWeather] = useState<WeatherResponse>();
   const [isLoading, setLoading] = useState(false);
   const key = process.env.REACT_APP_KEY;
@@ -29,15 +32,15 @@ export default function Page() {
   return (
     <div>
       <div className="bg-slate-800">
-        <Navbar label="Weatherly" />   
+        <Navbar handlerSubmit={handlerSubmit} setHandlerSubmit={setHandlerSubmit} label="Weatherly" />   
       </div>
       <form className='my-1'>
         <input className='border-4 border-black mx-1' type="text" name="name" />
         <button className='rounded-3xl border-2 border-black mx-1' type="button" onClick={getData}>Submit</button>
       </form>
-    <div>
-      <h1>{isLoading || !weather || (<div className='text-6xl'><h1>{weather.location.name}</h1></div>)}</h1>
+      <div>
+        <h1>{isLoading || !weather || (<div className='text-6xl'><h1>{weather.location.name}</h1></div>)}</h1>
+      </div>
     </div>
-  </div>
   )
 }
