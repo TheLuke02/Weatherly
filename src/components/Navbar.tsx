@@ -9,7 +9,7 @@ export const Navbar = ({fetchData, label}: NavbarProps) => {
   const [handlerSubmit, setHandlerSubmit] = useState("");
   
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
+    e.preventDefault();
     fetchData(handlerSubmit);
   }
 
@@ -23,11 +23,11 @@ export const Navbar = ({fetchData, label}: NavbarProps) => {
 
         <form onSubmit={handleSubmit} className='flex w-52 items-center justify-center md:w-80'>
           <input value={handlerSubmit} onChange={(e) => {setHandlerSubmit(e.target.value)}} className='w-36 py-1 px-2 rounded-full border-2 border-orange-500 !outline-none transition-all ease-out focus:w-52 md:w-44 md:focus:w-72 text-slate-800 placeholder-slate-800 font-bold' placeholder='Search your city...'/>
-          <button className='hidden rounded-full px-2 md:block' type="submit"><img className='h-10 w-10' src='/arrow.png' alt='Search' /></button>
+          <button className='hidden rounded-full px-2 md:block' type="submit"><img className='h-9 w-9' src='/arrow.png' alt='Search' /></button>
         </form>
 
       </div>  
-      <div className='flex-none text-center text-orange-500 font-bold'>
+      <div className='flex text-center text-orange-500 font-bold'>
         <span>Profilo</span>
       </div>            
     </nav>
