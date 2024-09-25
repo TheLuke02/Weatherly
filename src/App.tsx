@@ -1,4 +1,6 @@
 import {Navbar} from './components/Navbar'
+import {Loading} from './components/Loading'
+
 import { useState } from 'react'
 import { WeatherResponse } from './types';
 
@@ -33,8 +35,9 @@ export default function Page() {
       <div className="bg-slate-800">
         <Navbar fetchData={getData} label="Weatherly" />   
       </div>
-      <div>
-        <h1>
+      
+      <div className='h-[calc(100vh-64px)]'>
+        {/*!isLoading || */<Loading />}
           {
             isLoading || !weather || 
             (
@@ -46,7 +49,6 @@ export default function Page() {
             </div>
             )
           }
-        </h1>
       </div>
     </div>
   )
