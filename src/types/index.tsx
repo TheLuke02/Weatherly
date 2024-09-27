@@ -23,6 +23,16 @@ export interface Submit {
 }
 
 export interface WeatherResponse {
-    location: {name: string};
+    location: {
+        name: string, 
+        region: string,
+        country: string,
+        tz_id: string,
+        localtime: string
+    };
     current: {temp_c: number};
+}
+
+export interface WeatherStatProps {
+    weather: WeatherResponse;
 }

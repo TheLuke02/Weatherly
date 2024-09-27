@@ -1,5 +1,6 @@
 import {Navbar} from './components/Navbar'
 import {Loading} from './components/Loading'
+import {WeatherStat} from './components/WeatherStat'
 
 import { useState } from 'react'
 import { WeatherResponse } from './types';
@@ -39,40 +40,8 @@ export default function Page() {
       
       <div className='h-[calc(100vh-64px)]'>
         {!isLoading || <Loading />}
-          {
-            isLoading || !weather || 
-            (
-            <div className='text-6xl'>
-              <h1>
-                {weather.location.name}
-                {weather.current.temp_c}
-              </h1>
-            </div>
-            )
-          }
+        {isLoading || !weather || <WeatherStat weather={weather} />}
       </div>
     </div>
   )
 }
-
-/**
- * <div className='flex flex-col h-full'>
-        <div className='flex flex-row justify-center border-4 my-2 border-black'>
-            <div>Nome</div>
-        </div>
-        <div className='flex flex-row justify-center border-4 my-2 border-black'>
-            <div className='flex-1 text-center border-r-2'>Citta</div>
-            <div className='flex-1 text-center border-r-2'>Regione</div>
-            <div className='flex-1 text-center border-r-2'>Nazione</div>
-            <div className='flex-1 text-center'>Continente</div>
-        </div>
-        <div className='flex flex-row justify-center border-4 my-2 border-black'>
-            <div className='flex-1 text-center border-r-2'>Oggi</div>
-            <div className='flex-1 text-center border-r-2'>Domani</div>
-            <div className='flex-1 text-center'>Dopodomani</div>
-        </div>
-        <div className='flex flex-row my-10 justify-center border-4 border-black'>
-            <div className='flex-1 text-center'>Robe</div>
-        </div>
-    </div>
- */

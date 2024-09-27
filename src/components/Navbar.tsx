@@ -14,10 +14,10 @@ export const Navbar = ({fetchData, label}: NavbarProps) => {
   }
 
   return (
-    <nav className='flex items-center justify-between gap-x-2.5 px-5 h-16'>
+    <nav className='flex items-center justify-between px-5 h-16'>
       <div className='flex'>
         <img className='w-14 h-14' src='/sun.png' alt='Sun' />
-        <span className='hidden md:ml-3 items-center justify-center text-2xl text-orange-500 font-bold md:flex'>{label}</span>
+        <span className='hidden items-center justify-center text-2xl text-orange-500 font-bold md:flex'>{label}</span>
       </div>
       <div className='flex'>
 
