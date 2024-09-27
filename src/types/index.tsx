@@ -30,7 +30,15 @@ export interface WeatherResponse {
         tz_id: string,
         localtime: string
     };
-    current: {temp_c: number};
+    current: {
+        temp_c: number,
+        wind_kph: number,
+        humidity: number,
+        condition: {
+            text: string,
+            icon: string
+        }
+    };
 }
 
 export interface WeatherStatProps {
