@@ -39,6 +39,38 @@ export interface WeatherResponse {
             icon: string
         }
     };
+
+    forecast: {
+        forecastday: [
+            {
+                date: string,
+                day: {
+                    avgtemp_c: number,
+                    condition: {
+                        text: string
+                    }
+                }
+            },
+            {
+                date: string,
+                day: {
+                    avgtemp_c: number,
+                    condition: {
+                        text: string
+                    }
+                }
+            },
+            {
+                date: string,
+                day: {
+                    avgtemp_c: number,
+                    condition: {
+                        text: string
+                    }
+                }
+            }
+        ]
+    }
 }
 
 export interface WeatherStatProps {

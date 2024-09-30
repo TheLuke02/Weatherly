@@ -15,7 +15,7 @@ export default function Page() {
   async function getData(handleSubmit: string) {
     setLoading(true)
     
-    const url = `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${handleSubmit}&days=2&aqi=no&alerts=no`;
+    const url = `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${handleSubmit}&days=3&aqi=no&alerts=no`;
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -23,7 +23,6 @@ export default function Page() {
       }
 
       const json = await response.json();
-      console.log(json);
       setWeather(json)
     } catch (error) {
       console.log(null);
