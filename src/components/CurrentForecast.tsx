@@ -4,7 +4,7 @@ export const CurrentForecast = ({ weather, selectedDay }: HourlyForecastProps) =
     return (
         <>
             <div className='flex flex-row w-auto h-[7%] space-x-2 items-center justify-center rounded'>
-                <div className='flex flex-1 items-center justify-center px-1 font-bold'>
+                <div className='flex flex-1 items-center justify-center px-1 font-bold text-center'>
                     {weather.location.name}
                 </div>
                 <div className='flex flex-1 items-center justify-center px-1 font-bold'>

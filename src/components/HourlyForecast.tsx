@@ -6,14 +6,14 @@ export const HourlyForecast = ({ weather, selectedDay }: HourlyForecastProps) =>
             {
               weather.forecast.forecastday[selectedDay].hour.map(function (item) {
                 return (
-                  <div className='flex flex-col items-center justify-items-center justify-between min-h-[150px] border-sky-600 border-b-4 bg-white rounded-xl'>
-                    <div className='mt-2 text-xl'>
+                  <div className='flex flex-col items-center justify-items-center justify-between min-h-[150px] border-sky-600 border-b-2 bg-white rounded-xl'>
+                    <div className='mt-4 text-xl font-bold'>
                       {item.time.split(" ")[1]}
                     </div>
-                    <div className='text-2xl font-semibold'>
+                    <div className='text-lg font-semibold'>
                       {item.temp_c}°
                     </div>
-                    <div className='mb-2 text-center'>
+                    <div className='mb-4 text-center'>
                       {item.condition.text}
                     </div>
                   </div>
