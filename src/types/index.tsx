@@ -1,5 +1,6 @@
 import { MouseEventHandler } from "react"; // Catturo gli eventi nel caso ce ne fosse bisogno
 import { Dispatch, SetStateAction } from "react";
+//import exampleResponse from "./example-response.json"
 
 
 // Tutti i tipi dei props
@@ -21,6 +22,8 @@ export interface Submit {
     handlerSubmit: string;
     setHandlerSubmit: Dispatch<SetStateAction<string>>
 }
+
+//export type WeatherResponse = typeof exampleResponse
 
 export interface WeatherResponse {
     location: {
@@ -105,4 +108,14 @@ export interface WeatherResponse {
 
 export interface WeatherStatProps {
     weather: WeatherResponse;
+}
+
+export interface HourlyForecastProps {
+    weather: WeatherResponse;
+    selectedDay: number;
+}
+
+export interface DailyForecastProps {
+    weather: WeatherResponse;
+    dayChange: Dispatch<SetStateAction<number>>;
 }

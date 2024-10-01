@@ -33,7 +33,7 @@ export default function Page() {
 
   return (
     <div>
-      <div className="bg-slate-800">
+      <div className="bg-sky-600">
         <Navbar fetchData={getData} label="Weatherly" />   
       </div>
       
