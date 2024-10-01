@@ -14,7 +14,7 @@ export const DailyForecast = ({ weather, dayChange }: DailyForecastProps) => {
             <button className='flex flex-1' onClick={() => { dayChange(0) }}>
               <div className='flex flex-1 flex-col h-full items-center border-4 rounded-xl border-sky-600'>
 
-                <div className='flex text-lg font-medium justify-center'>
+                <div className='flex text-lg font-medium justify-center px-1'>
                   Today
                 </div>
                 <div className='flex mt-3 font-semibold'>
@@ -26,7 +26,7 @@ export const DailyForecast = ({ weather, dayChange }: DailyForecastProps) => {
             <button className='flex flex-1' onClick={() => { dayChange(1) }}>
               <div className='flex flex-1 flex-col h-full items-center border-4 rounded-xl border-sky-600'>
 
-                <div className='flex text-xs font-bold justify-center mt-2'>
+                <div className='flex text-xs font-bold justify-center mt-2 px-1'>
                   {tomorrow}
                 </div>
                 <div className='flex mt-4 font-semibold'>
@@ -38,7 +38,7 @@ export const DailyForecast = ({ weather, dayChange }: DailyForecastProps) => {
             <button className='flex flex-1' onClick={() => { dayChange(2) }}>
               <div className='flex flex-1 flex-col h-full items-center border-4 rounded-xl border-sky-600'>
 
-                <div className='flex text-xs font-bold justify-center mt-2'>
+                <div className='flex text-xs font-bold justify-center mt-2 px-1'>
                   {afterTomorrow}
                 </div>
                 <div className='flex mt-4 font-semibold'>

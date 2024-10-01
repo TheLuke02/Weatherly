@@ -3,7 +3,7 @@ import { HourlyForecastProps } from '../types'
 export const CurrentForecast = ({ weather, selectedDay }: HourlyForecastProps) => {
     return (
         <>
-            <div className='flex flex-row w-auto h-[7%] space-x-2 rounded'>
+            <div className='flex flex-row w-auto h-[7%] space-x-2 items-center justify-center rounded'>
                 <div className='flex flex-1 items-center justify-center px-1 font-bold'>
                     {weather.location.name}
                 </div>
@@ -14,12 +14,12 @@ export const CurrentForecast = ({ weather, selectedDay }: HourlyForecastProps) =
                     {weather.forecast.forecastday[selectedDay].date.split(" ")[0].replaceAll("-", '.')}
                 </div>
             </div>
-            <div className='flex flex-col h-5/6 mt-5'>
-                <div className='flex mt-10 items-start justify-center font-semibold text-8xl'>
+            <div className='flex flex-col h-5/6 items-center justify-center'>
+                <div className='flex justify-center items-center font-semibold text-8xl'>
                     {weather.current.temp_c}°
                 </div>
-                <div className='flex flex-row items-center mt-14 justify-center'>
-                    <div className='flex pb-2 mr-2 justify-center text-3xl'>
+                <div className='flex flex-row items-center justify-center'>
+                    <div className='flex mr-2 justify-center text-lg'>
                         {weather.current.condition.text}
                     </div>
 
@@ -27,18 +27,20 @@ export const CurrentForecast = ({ weather, selectedDay }: HourlyForecastProps) =
                         <img src={weather.current.condition.icon} alt="Condition Icon" />
                     </div>
                 </div>
-                <div className='flex flex-col text-2xl ml-7 mt-10'>
-                    <div className='flex items-center space-x-7'>
-                        <div className='flex w-9 h-9 mr-3'>
+                <div className='flex flex-col items-center justify-center'>
+                    <div className='flex items-center  space-x-7 text-base text-slate-800'>
+                        
+                        {weather.current.wind_kph} km/h
+                        <div className='flex w-8 h-8'>
                             <img src="/wind.png" alt="Condition Icon" />
                         </div>
-                        {weather.current.wind_kph} km/h
                     </div>
-                    <div className='flex items-center space-x-4'>
-                        <div className='flex w-9 h-9 mr-3'>
+                    <div className='flex items-center space-x-4 text-base text-slate-800'>
+                        
+                        {weather.current.humidity} %
+                        <div className='flex w-8 h-8'>
                             <img src="/humidity.png" alt="Condition Icon" />
                         </div>
-                        {weather.current.humidity} %
                     </div>
                 </div>
             </div></>

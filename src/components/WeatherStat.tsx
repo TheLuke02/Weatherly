@@ -1,4 +1,3 @@
-import React from 'react'
 import { WeatherStatProps } from '../types'
 import { useState } from 'react'
 import { HourlyForecast } from './HourlyForecast'

@@ -2,7 +2,7 @@ import { HourlyForecastProps } from '../types'
 
 export const HourlyForecast = ({ weather, selectedDay }: HourlyForecastProps) => {
     return (
-          <div className='flex mx-2 flex-col flex-nowrap h-full overflow-y-auto space-y-2 '>
+          <div className='flex mx-2 flex-col flex-nowrap h-full overflow-y-auto space-y-2'>
             {
               weather.forecast.forecastday[selectedDay].hour.map(function (item) {
                 return (
