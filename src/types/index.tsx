@@ -49,14 +49,18 @@ export interface WeatherResponse {
                 date: string,
                 day: {
                     avgtemp_c: number,
+                    avgvis_km: number,
+                    avghumidity: number,
                     condition: {
-                        text: string
+                        text: string,
+                        icon: string
                     }
                 },
                 hour: [
                     {
                         condition: {
                             text: string,
+                            icon: string
                         },
                         time: string,
                         temp_c: number,
@@ -68,14 +72,18 @@ export interface WeatherResponse {
                 date: string,
                 day: {
                     avgtemp_c: number,
+                    avgvis_km: number,
+                    avghumidity: number,
                     condition: {
                         text: string
+                        icon: string
                     }
                 },
                 hour: [
                     {
                         condition: {
                             text: string,
+                            icon: string
                         },
                         time: string,
                         temp_c: number,
@@ -87,14 +95,18 @@ export interface WeatherResponse {
                 date: string,
                 day: {
                     avgtemp_c: number,
+                    avgvis_km: number,
+                    avghumidity: number,
                     condition: {
-                        text: string
+                        text: string,
+                        icon: string
                     }
                 },
                 hour: [
                     {
                         condition: {
                             text: string,
+                            icon: string
                         },
                         time: string,
                         temp_c: number,
