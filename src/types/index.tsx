@@ -49,7 +49,17 @@ export interface WeatherResponse {
                     condition: {
                         text: string
                     }
-                }
+                },
+                hour: [
+                    {
+                        condition: {
+                            text: string,
+                        },
+                        time: string,
+                        temp_c: number,
+                        is_day: number
+                    }
+                ]
             },
             {
                 date: string,
@@ -58,7 +68,17 @@ export interface WeatherResponse {
                     condition: {
                         text: string
                     }
-                }
+                },
+                hour: [
+                    {
+                        condition: {
+                            text: string,
+                        },
+                        time: string,
+                        temp_c: number,
+                        is_day: number
+                    }
+                ]
             },
             {
                 date: string,
@@ -67,7 +87,17 @@ export interface WeatherResponse {
                     condition: {
                         text: string
                     }
-                }
+                },
+                hour: [
+                    {
+                        condition: {
+                            text: string,
+                        },
+                        time: string,
+                        temp_c: number,
+                        is_day: number
+                    }
+                ]
             }
         ]
     }
