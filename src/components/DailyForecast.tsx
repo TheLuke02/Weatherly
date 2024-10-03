@@ -17,8 +17,10 @@ export const DailyForecast = ({ weather, dayChange }: DailyForecastProps) => {
         }}
       >
         <div className="flex h-full flex-1 flex-col items-center justify-around rounded-xl border-2 border-sky-600">
-          <div className="flex justify-center px-1 font-bold">Today</div>
-          <div className="flex font-semibold">
+          <div className="flex justify-center px-1 font-bold sm:text-xl md:text-2xl">
+            Today
+          </div>
+          <div className="flex font-semibold sm:text-xl md:text-2xl">
             {weather.forecast.forecastday[0].day.avgtemp_c}°
           </div>
         </div>
@@ -30,10 +32,10 @@ export const DailyForecast = ({ weather, dayChange }: DailyForecastProps) => {
         }}
       >
         <div className="flex h-full flex-1 flex-col items-center justify-around rounded-xl border-2 border-sky-600">
-          <div className="flex justify-center px-1 font-bold">
+          <div className="flex justify-center px-1 font-bold sm:text-xl md:text-2xl">
             {tomorrow.substring(5)}
           </div>
-          <div className="flex font-semibold">
+          <div className="flex font-semibold sm:text-xl md:text-2xl">
             {weather.forecast.forecastday[1].day.avgtemp_c}°
           </div>
         </div>
@@ -45,10 +47,10 @@ export const DailyForecast = ({ weather, dayChange }: DailyForecastProps) => {
         }}
       >
         <div className="flex h-full flex-1 flex-col items-center justify-around rounded-xl border-2 border-sky-600">
-          <div className="flex justify-center px-1 font-bold">
+          <div className="flex justify-center px-1 font-bold sm:text-xl md:text-2xl">
             {afterTomorrow.substring(5)}
           </div>
-          <div className="flex font-semibold">
+          <div className="flex font-semibold sm:text-xl md:text-2xl">
             {weather.forecast.forecastday[2].day.avgtemp_c}°
           </div>
         </div>

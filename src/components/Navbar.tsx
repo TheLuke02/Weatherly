@@ -28,7 +28,7 @@ export const Navbar = ({ fetchData, label }: NavbarProps) => {
             onChange={(e) => {
               setHandlerSubmit(e.target.value);
             }}
-            className="w-36 rounded-full border-2 border-white px-2 py-1 font-bold text-black placeholder-slate-400 !outline-none transition-all ease-out focus:w-52 md:w-44 md:focus:w-72"
+            className="w-36 rounded-full border-2 border-white px-2 py-1 font-semibold text-black placeholder-slate-400 !outline-none transition-all ease-out focus:w-52 md:w-44 md:focus:w-72"
             placeholder="Search your city..."
           />
           <button className="hidden rounded-full px-2 md:block" type="submit">
