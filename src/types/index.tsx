@@ -131,3 +131,8 @@ export interface DailyForecastProps {
   selectedDay: number;
   dayChange: Dispatch<SetStateAction<number>>;
 }
+
+export interface SavedCityProps {
+  loading: boolean;
+  response: WeatherResponse | undefined;
+}

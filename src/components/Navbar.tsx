@@ -1,6 +1,7 @@
 import { NavbarProps } from "../types";
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Navbar = ({ fetchData, label }: NavbarProps) => {
   const [handlerSubmit, setHandlerSubmit] = useState("");
@@ -11,7 +12,7 @@ export const Navbar = ({ fetchData, label }: NavbarProps) => {
   }
 
   return (
-    <nav className="flex h-16 items-center justify-between px-5">
+    <nav className="flex h-16 items-center justify-between bg-sky-600 px-5">
       <div className="flex space-x-3">
         <img className="h-14 w-14" src="/sun.png" alt="Sun" />
         <span className="hidden items-center justify-center text-2xl font-bold text-white md:flex">
@@ -37,7 +38,7 @@ export const Navbar = ({ fetchData, label }: NavbarProps) => {
         </form>
       </div>
       <div className="flex text-center font-bold text-white">
-        <span>Salvati</span>
+        <Link to="/saved">Saved</Link>
       </div>
     </nav>
   );

@@ -4,7 +4,7 @@ export const NotSavedBookbark = () => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0,0,256,256"
       className="h-6 w-6 fill-sky-500 sm:h-8 sm:w-8 md:h-9 md:w-9"
-      fill-rule="nonzero"
+      fillRule="nonzero"
     >
       <path
         transform="scale(5.33333,5.33333)"
@@ -12,8 +12,8 @@ export const NotSavedBookbark = () => {
         id="strokeMainSVG"
         fill="white"
         stroke="#000000"
-        stroke-width="3"
-        stroke-linejoin="round"
+        strokeWidth="3"
+        strokeLinejoin="round"
       />
     </svg>
   );
