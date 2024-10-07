@@ -1,15 +1,30 @@
 import { HourlyForecastProps } from "../types";
 import { NotSavedBookbark } from "./NotSavedBookmark";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SavedBookbark } from "./SavedBookmark";
 
 export const CurrentForecast = ({
   weather,
   selectedDay,
 }: HourlyForecastProps) => {
-  const [saved, setDaved] = useState(false);
-  const saveCity = () => {
-    setDaved(!saved);
+  const [saved, setSaved] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem(weather.location.name) != null) {
+      setSaved(true);
+    } else {
+      setSaved(false);
+    }
+  }, [weather.location.name]);
+
+  const toggleCity = () => {
+    setSaved(!saved);
+
+    if (!saved) {
+      localStorage.setItem(weather.location.name, "true");
+    } else {
+      localStorage.removeItem(weather.location.name);
+    }
   };
 
   return (
@@ -24,7 +39,7 @@ export const CurrentForecast = ({
             .replaceAll("-", "/")}
         </div>
         <div className="flex flex-1 items-center justify-center">
-          <button className="flex" onClick={saveCity}>
+          <button className="flex" onClick={toggleCity}>
             {saved ? <SavedBookbark /> : <NotSavedBookbark />}
           </button>
         </div>

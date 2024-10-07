@@ -128,5 +128,6 @@ export interface HourlyForecastProps {
 
 export interface DailyForecastProps {
   weather: WeatherResponse;
+  selectedDay: number;
   dayChange: Dispatch<SetStateAction<number>>;
 }

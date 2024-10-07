@@ -37,7 +37,7 @@ export const Navbar = ({ fetchData, label }: NavbarProps) => {
         </form>
       </div>
       <div className="flex text-center font-bold text-white">
-        <span>Profilo</span>
+        <span>Salvati</span>
       </div>
     </nav>
   );
