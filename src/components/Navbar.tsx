@@ -2,11 +2,14 @@ import { NavbarProps } from "../types";
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Navbar = ({ fetchData, label }: NavbarProps) => {
   const [handlerSubmit, setHandlerSubmit] = useState("");
+  const navigate = useNavigate();
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    navigate("/search");
     e.preventDefault();
     fetchData(handlerSubmit);
   }
@@ -14,7 +17,9 @@ export const Navbar = ({ fetchData, label }: NavbarProps) => {
   return (
     <nav className="flex h-16 items-center justify-between bg-sky-600 px-5">
       <div className="flex space-x-3">
-        <img className="h-14 w-14" src="/sun.png" alt="Sun" />
+        <Link to="/">
+          <img className="h-14 w-14" src="/sun.png" alt="Sun" />
+        </Link>
         <span className="hidden items-center justify-center text-2xl font-bold text-white md:flex">
           {label}
         </span>

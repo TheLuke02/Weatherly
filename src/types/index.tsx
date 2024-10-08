@@ -22,8 +22,6 @@ export interface Submit {
   setHandlerSubmit: Dispatch<SetStateAction<string>>;
 }
 
-//export type WeatherResponse = typeof exampleResponse
-
 export interface WeatherResponse {
   location: {
     name: string;
@@ -134,5 +132,19 @@ export interface DailyForecastProps {
 
 export interface SavedCityProps {
   loading: boolean;
-  response: WeatherResponse | undefined;
+  response: WeatherResponse;
+}
+
+export interface SearchProps {
+  fetchData: (handleSubmit: string) => Promise<void>;
+  isLoading: boolean;
+  weather: WeatherResponse;
+}
+
+export interface HomeProps {
+  fetchData: (handleSubmit: string) => Promise<void>;
+}
+
+export interface SavedProps {
+  fetchData: (handleSubmit: string) => Promise<void>;
 }
