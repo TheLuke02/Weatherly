@@ -7,7 +7,7 @@ import { Saved } from "./pages/Saved";
 import { HandleError } from "./components/HandleError";
 
 export default function Page() {
-  const [weather, setWeather] = useState<WeatherResponse | null>();
+  const [weather, setWeather] = useState<WeatherResponse | null>(null);
   const [isLoading, setLoading] = useState(false);
   const key = process.env.REACT_APP_KEY;
 
