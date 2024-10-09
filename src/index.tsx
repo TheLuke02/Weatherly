@@ -1,18 +1,39 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import App from "./App";
+import { IndexPage } from "./pages/IndexPage";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import SearchPage from "./pages/SearchPage";
+import { SavedPage } from "./pages/SavedPage";
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement,
-);
+const rootElement = document.getElementById("root") as HTMLElement;
+const root = createRoot(rootElement);
+const router = createBrowserRouter([
+  {
+    path: "",
+    element: <Navbar />,
+    children: [
+      {
+        path: "/",
+        element: <IndexPage />,
+      },
+      {
+        path: "/search",
+        element: <SearchPage />,
+      },
+      {
+        path: "/saved",
+        element: <SavedPage />,
+      },
+    ],
+  },
+]);
+
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <RouterProvider router={router} />
   </React.StrictMode>,
 );
 

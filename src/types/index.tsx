@@ -12,11 +12,6 @@ export interface ButtonProps {
   handleClick?: MouseEventHandler<HTMLButtonElement>; // Controlla se il bottone è stato cliccato o meno
 }
 
-export interface NavbarProps {
-  fetchData: (handleSubmit: string) => Promise<void>;
-  label: string;
-}
-
 export interface Submit {
   handlerSubmit: string;
   setHandlerSubmit: Dispatch<SetStateAction<string>>;
@@ -133,18 +128,4 @@ export interface DailyForecastProps {
 export interface SavedCityProps {
   loading: boolean;
   response: WeatherResponse;
-}
-
-export interface SearchProps {
-  fetchData: (handleSubmit: string) => Promise<void>;
-  isLoading: boolean;
-  weather: WeatherResponse;
-}
-
-export interface HomeProps {
-  fetchData: (handleSubmit: string) => Promise<void>;
-}
-
-export interface SavedProps {
-  fetchData: (handleSubmit: string) => Promise<void>;
 }
