@@ -7,7 +7,6 @@ import { WeatherStat } from "../components/WeatherStat";
 
 export default function SearchPage() {
   const [searchParams] = useSearchParams();
-  const [name, setName] = useState("");
   const [weather, setWeather] = useState<WeatherResponse | null>(null);
   const [isLoading, setLoading] = useState(false);
   const key = process.env.REACT_APP_KEY;
@@ -34,14 +33,11 @@ export default function SearchPage() {
   useEffect(() => {
     const q = searchParams.get("q");
     if (q) {
-      setName(q);
+      fetchData(q);
     } else {
-      setName("");
+      setWeather(null);
     }
-
-    console.log(name);
-    fetchData(name);
-  }, [searchParams, name]);
+  }, [searchParams]);
 
   return (
     <div>
@@ -52,10 +48,3 @@ export default function SearchPage() {
     </div>
   );
 }
-
-/**
- *
- *
- *
- *
- */
