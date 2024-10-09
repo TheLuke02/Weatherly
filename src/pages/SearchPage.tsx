@@ -4,6 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import { WeatherResponse } from "../types";
 import { Loading } from "../components/Loading";
 import { WeatherStat } from "../components/WeatherStat";
+import { BadRequest } from "../components/BadRequest";
 
 export default function SearchPage() {
   const [searchParams] = useSearchParams();
@@ -17,6 +18,7 @@ export default function SearchPage() {
     try {
       const response = await fetch(url);
       if (!response.ok) {
+        setWeather(null);
         throw new Error(`Response status: ${response.status}`);
       }
 
@@ -43,6 +45,7 @@ export default function SearchPage() {
     <div>
       <div className="h-[calc(100vh-64px)]">
         {!isLoading || <Loading />}
+        {Boolean(isLoading || weather) || <BadRequest />}
         {isLoading || !weather || <WeatherStat weather={weather} />}
       </div>
     </div>
