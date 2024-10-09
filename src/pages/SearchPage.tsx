@@ -39,7 +39,7 @@ export default function SearchPage() {
     } else {
       setWeather(null);
     }
-  }, [searchParams]);
+  }, [searchParams]); //eslint-disable-line
 
   return (
     <div>

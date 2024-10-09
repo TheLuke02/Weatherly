@@ -26,7 +26,7 @@ export default function Navbar() {
           <Link to="/">
             <img className="h-14 w-14" src="/sun.png" alt="Sun" />
           </Link>
-          <span className="hidden items-center justify-center text-2xl font-bold text-white md:flex">
+          <span className="hidden items-center justify-center pl-2 text-2xl font-bold text-white md:flex">
             Weatherly
           </span>
         </div>
