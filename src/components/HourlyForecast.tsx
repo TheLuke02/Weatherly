@@ -10,7 +10,7 @@ export const HourlyForecast = ({
         return (
           <div
             className="flex min-h-[150px] flex-col items-center justify-between justify-items-center rounded-xl border-b-2 border-sky-600 bg-white"
-            key={crypto.randomUUID()}
+            key={window.crypto.randomUUID()}
           >
             <div className="mt-4 text-lg sm:text-2xl md:text-3xl">
               {item.time.split(" ")[1]}
