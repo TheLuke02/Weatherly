@@ -19,24 +19,27 @@ export const SavedPage = () => {
   }
 
   return (
-    <div className="h-[calc(100vh-64px)]">
-      <div className="flex h-full flex-col space-y-2 overflow-auto px-2 py-2">
-        <p className="py-2 text-center text-2xl font-semibold">
-          Your saved citys...
-        </p>
+    <div className="h-[calc(100vh-108px)] sm:h-[calc(100vh-116px)] md:h-[calc(100vh-128px)]">
+      <p className="w-full py-2 text-center text-xl font-semibold sm:text-3xl md:text-5xl">
+        Your saved citys...
+      </p>
+      <div className="grid h-full w-full grid-cols-1 gap-y-2 overflow-y-auto px-2 py-2 sm:grid-cols-3 sm:gap-x-2 md:grid-cols-4">
         {arr.length > 0 ? (
           arr.map(function (item) {
             return (
-              <button
-                onClick={() => {
-                  handleClick(item!);
-                }}
-                key={window.crypto.randomUUID()}
-              >
-                <div className="h-20 content-center rounded-lg border-2 border-sky-600 text-center text-xl font-semibold">
-                  {item}
-                </div>
-              </button>
+              <div className="h-full w-full basis-1/4 rounded-lg border-2 border-sky-600">
+                <button
+                  className="h-full w-full"
+                  onClick={() => {
+                    handleClick(item!);
+                  }}
+                  key={window.crypto.randomUUID()}
+                >
+                  <div className="min-h-20 content-center items-center text-xl font-semibold sm:min-h-32 sm:text-2xl md:min-h-48 md:text-3xl">
+                    {item}
+                  </div>
+                </button>
+              </div>
             );
           })
         ) : (

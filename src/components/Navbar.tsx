@@ -21,8 +21,8 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="flex h-16 items-center justify-between bg-sky-600">
-        <div className="flex pl-5">
+      <nav className="flex h-16 items-center justify-around bg-sky-600">
+        <div className="flex">
           <Link to="/">
             <img className="h-14 w-14" src="/sun.png" alt="Sun" />
           </Link>
@@ -48,7 +48,7 @@ export default function Navbar() {
             </button>
           </form>
         </div>
-        <div className="flex pr-5 text-center font-bold text-white">
+        <div className="flex text-center font-bold text-white md:text-2xl">
           <Link to="/saved">Saved</Link>
         </div>
       </nav>
