@@ -3,10 +3,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
+import { ContextType } from "../types";
 
 export default function Navbar() {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
+  const [wind, SetWind] = useState<string>("kilometer");
+  const [temperature, setTemperature] = useState<string>("Celsius");
 
   function submitQuery(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -52,7 +55,14 @@ export default function Navbar() {
           <Link to="/saved">Saved</Link>
         </div>
       </nav>
-      <Outlet />
+      <Outlet
+        context={
+          {
+            windType: [wind, SetWind],
+            temperatureType: [temperature, setTemperature],
+          } satisfies ContextType
+        }
+      />
     </>
   );
 }

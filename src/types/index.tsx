@@ -129,3 +129,19 @@ export interface SavedCityProps {
   loading: boolean;
   response: WeatherResponse;
 }
+
+export interface ToggleButtonProps {
+  target: string[];
+  toggleReference: string;
+}
+
+export interface ContextType {
+  windType: [
+    wind: string,
+    setWind: React.Dispatch<React.SetStateAction<string>>,
+  ];
+  temperatureType: [
+    temperature: string,
+    setTemperature: React.Dispatch<React.SetStateAction<string>>,
+  ];
+}

@@ -18,7 +18,7 @@ export const SavedPage = () => {
     if (localStorage.key(i) !== "ally-supports-cache")
       arr.push(localStorage.key(i));
   }
-  //
+
   return (
     <div className="h-[calc(100vh-108px)] sm:h-[calc(100vh-116px)] md:h-[calc(100vh-128px)]">
       <p className="w-full py-2 text-center text-xl font-semibold sm:text-3xl md:text-5xl">
