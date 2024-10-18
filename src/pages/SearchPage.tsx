@@ -41,6 +41,18 @@ export default function SearchPage() {
     }
   }, [searchParams]); //eslint-disable-line
 
+  useEffect(() => {
+    if (localStorage.getItem("Temperature") == null) {
+      localStorage.setItem("Temperature", "Celsius");
+    }
+    if (localStorage.getItem("Wind") == null) {
+      localStorage.setItem("Wind", "kilometer");
+    }
+    if (localStorage.getItem("Lenguage") == null) {
+      localStorage.setItem("Lenguage", "en");
+    }
+  });
+
   return (
     <div>
       <div className="h-[calc(100vh-64px)]">

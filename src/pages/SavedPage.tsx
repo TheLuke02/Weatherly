@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 export const SavedPage = () => {
   const navigate = useNavigate();
   const params = new URLSearchParams();
@@ -15,9 +16,26 @@ export const SavedPage = () => {
   let arr = [];
 
   for (let i = 0; i < localStorage.length; i++) {
-    if (localStorage.key(i) !== "ally-supports-cache")
+    if (
+      localStorage.key(i) !== "ally-supports-cache" &&
+      localStorage.key(i) !== "Temperature" &&
+      localStorage.key(i) !== "Wind" &&
+      localStorage.key(i) !== "Lenguage"
+    )
       arr.push(localStorage.key(i));
   }
+
+  useEffect(() => {
+    if (localStorage.getItem("Temperature") == null) {
+      localStorage.setItem("Temperature", "Celsius");
+    }
+    if (localStorage.getItem("Wind") == null) {
+      localStorage.setItem("Wind", "kilometer");
+    }
+    if (localStorage.getItem("Lenguage") == null) {
+      localStorage.setItem("Lenguage", "en");
+    }
+  });
 
   return (
     <div className="h-[calc(100vh-108px)] sm:h-[calc(100vh-116px)] md:h-[calc(100vh-128px)]">
@@ -29,13 +47,15 @@ export const SavedPage = () => {
           arr.map(function (item) {
             key++;
             return (
-              <div className="h-20 w-full rounded-lg border-2 border-sky-600 sm:h-28 md:h-32">
+              <div
+                className="h-20 w-full rounded-lg border-2 border-sky-600 sm:h-28 md:h-32"
+                key={key}
+              >
                 <button
                   className="h-full w-full"
                   onClick={() => {
                     handleClick(item!);
                   }}
-                  key={key}
                 >
                   <div className="flex h-full items-center justify-center text-xl font-semibold sm:text-2xl md:text-3xl">
                     {item}

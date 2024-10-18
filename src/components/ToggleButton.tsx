@@ -1,18 +1,43 @@
 import { ToggleButtonProps } from "../types";
-import { ContextType } from "../types";
-import { useOutletContext } from "react-router-dom";
 export const ToggleButton = ({
   target,
   toggleReference,
 }: ToggleButtonProps) => {
-  const { windType, temperatureType } = useOutletContext<ContextType>();
+  const handleToggle = (toggleReference: string) => {
+    if (
+      toggleReference === "Temperature" &&
+      localStorage.getItem(toggleReference) !== "Celsius"
+    ) {
+      console.log("Imposto Celsius");
+      localStorage.setItem(toggleReference, "Celsius");
+    } else if (
+      toggleReference === "Temperature" &&
+      localStorage.getItem(toggleReference) !== "Farenheit"
+    ) {
+      console.log("Imposto Farenheit");
+      localStorage.setItem(toggleReference, "Farenheit");
+    }
 
-  const handleToggle = () => {
-    console.log("A");
+    if (
+      toggleReference === "Wind" &&
+      localStorage.getItem(toggleReference) !== "Kilometer"
+    ) {
+      console.log("Imposto Kilometer");
+      localStorage.setItem(toggleReference, "Kilometer");
+    } else if (
+      toggleReference === "Wind" &&
+      localStorage.getItem(toggleReference) !== "Miles"
+    ) {
+      console.log("Imposto Miles");
+      localStorage.setItem(toggleReference, "Miles");
+    }
   };
 
   return (
-    <div className="inline-flex items-center gap-2" onClick={handleToggle}>
+    <div
+      className="inline-flex items-center gap-2"
+      onClick={() => handleToggle(toggleReference)}
+    >
       <label
         htmlFor={`switch-component-on-${toggleReference}`}
         className="cursor-pointer text-sm text-slate-600"

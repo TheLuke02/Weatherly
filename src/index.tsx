@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import Navbar from "./components/Navbar";
 import SearchPage from "./pages/SearchPage";
 import { SavedPage } from "./pages/SavedPage";
+import { SettingsPage } from "./pages/SettingsPage";
 
 const rootElement = document.getElementById("root") as HTMLElement;
 const root = createRoot(rootElement);
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/saved",
         element: <SavedPage />,
+      },
+      {
+        path: "/settings",
+        element: <SettingsPage />,
       },
     ],
   },

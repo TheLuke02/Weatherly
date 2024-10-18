@@ -3,13 +3,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
-import { ContextType } from "../types";
+import DropdownMenu from "./DropdownMenu";
 
 export default function Navbar() {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
-  const [wind, SetWind] = useState<string>("kilometer");
-  const [temperature, setTemperature] = useState<string>("Celsius");
 
   function submitQuery(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -51,18 +49,10 @@ export default function Navbar() {
             </button>
           </form>
         </div>
-        <div className="flex text-center font-bold text-white md:text-2xl">
-          <Link to="/saved">Saved</Link>
-        </div>
+
+        <DropdownMenu />
       </nav>
-      <Outlet
-        context={
-          {
-            windType: [wind, SetWind],
-            temperatureType: [temperature, setTemperature],
-          } satisfies ContextType
-        }
-      />
+      <Outlet />
     </>
   );
 }
