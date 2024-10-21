@@ -1,23 +1,6 @@
-import { useEffect } from "react";
 import { ToggleButton } from "../components/ToggleButton";
 
 export const SettingsPage = () => {
-  useEffect(() => {
-    if (localStorage.getItem("Temperature") == null) {
-      localStorage.setItem("Temperature", "Celsius");
-    }
-    if (localStorage.getItem("Wind") == null) {
-      localStorage.setItem("Wind", "kilometer");
-    }
-    if (localStorage.getItem("Lenguage") == null) {
-      localStorage.setItem("Lenguage", "en");
-    }
-    console.log(
-      localStorage.getItem("Temperature"),
-      localStorage.getItem("Wind"),
-    );
-  });
-
   return (
     <div>
       <div className="h-[calc(100vh-108px)] justify-center sm:h-[calc(100vh-116px)] md:h-[calc(100vh-128px)]">

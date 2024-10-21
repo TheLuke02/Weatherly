@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import DropdownMenu from "./DropdownMenu";
+import { useEffect } from "react";
 
 export default function Navbar() {
   const [query, setQuery] = useState("");
@@ -19,6 +20,22 @@ export default function Navbar() {
       search: params.toString(),
     });
   }
+
+  useEffect(() => {
+    if (localStorage.getItem("Temperature") === null) {
+      localStorage.setItem("Temperature", "Celsius");
+    }
+    if (localStorage.getItem("Wind") === null) {
+      localStorage.setItem("Wind", "kilometer");
+    }
+    if (localStorage.getItem("Lenguage") === null) {
+      localStorage.setItem("Lenguage", "en");
+    }
+    console.log(
+      localStorage.getItem("Temperature"),
+      localStorage.getItem("Wind"),
+    );
+  });
 
   return (
     <>

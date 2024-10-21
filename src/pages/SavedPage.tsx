@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 export const SavedPage = () => {
   const navigate = useNavigate();
   const params = new URLSearchParams();
@@ -24,18 +23,6 @@ export const SavedPage = () => {
     )
       arr.push(localStorage.key(i));
   }
-
-  useEffect(() => {
-    if (localStorage.getItem("Temperature") == null) {
-      localStorage.setItem("Temperature", "Celsius");
-    }
-    if (localStorage.getItem("Wind") == null) {
-      localStorage.setItem("Wind", "kilometer");
-    }
-    if (localStorage.getItem("Lenguage") == null) {
-      localStorage.setItem("Lenguage", "en");
-    }
-  });
 
   return (
     <div className="h-[calc(100vh-108px)] sm:h-[calc(100vh-116px)] md:h-[calc(100vh-128px)]">

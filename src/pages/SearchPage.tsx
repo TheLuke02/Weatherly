@@ -14,7 +14,7 @@ export default function SearchPage() {
 
   const fetchData = async (city: string) => {
     setLoading(true);
-    const url = `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=3&aqi=no&alerts=no`;
+    const url = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=3&aqi=no&alerts=no`;
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -40,18 +40,6 @@ export default function SearchPage() {
       setWeather(null);
     }
   }, [searchParams]); //eslint-disable-line
-
-  useEffect(() => {
-    if (localStorage.getItem("Temperature") == null) {
-      localStorage.setItem("Temperature", "Celsius");
-    }
-    if (localStorage.getItem("Wind") == null) {
-      localStorage.setItem("Wind", "kilometer");
-    }
-    if (localStorage.getItem("Lenguage") == null) {
-      localStorage.setItem("Lenguage", "en");
-    }
-  });
 
   return (
     <div>
