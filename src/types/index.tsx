@@ -27,7 +27,9 @@ export interface WeatherResponse {
   };
   current: {
     temp_c: number;
+    temp_f: number;
     wind_kph: number;
+    wind_mph: number;
     humidity: number;
     condition: {
       text: string;
@@ -41,8 +43,10 @@ export interface WeatherResponse {
         date: string;
         day: {
           avgtemp_c: number;
-          avgvis_km: number;
+          avgtemp_f: number;
           avghumidity: number;
+          maxwind_mph: number;
+          maxwind_kph: number;
           condition: {
             text: string;
             icon: string;
@@ -56,6 +60,7 @@ export interface WeatherResponse {
             };
             time: string;
             temp_c: number;
+            temp_f: number;
             is_day: number;
           },
         ];
@@ -64,8 +69,10 @@ export interface WeatherResponse {
         date: string;
         day: {
           avgtemp_c: number;
-          avgvis_km: number;
+          avgtemp_f: number;
           avghumidity: number;
+          maxwind_mph: number;
+          maxwind_kph: number;
           condition: {
             text: string;
             icon: string;
@@ -79,6 +86,7 @@ export interface WeatherResponse {
             };
             time: string;
             temp_c: number;
+            temp_f: number;
             is_day: number;
           },
         ];
@@ -87,8 +95,10 @@ export interface WeatherResponse {
         date: string;
         day: {
           avgtemp_c: number;
-          avgvis_km: number;
+          avgtemp_f: number;
           avghumidity: number;
+          maxwind_mph: number;
+          maxwind_kph: number;
           condition: {
             text: string;
             icon: string;
@@ -102,6 +112,7 @@ export interface WeatherResponse {
             };
             time: string;
             temp_c: number;
+            temp_f: number;
             is_day: number;
           },
         ];

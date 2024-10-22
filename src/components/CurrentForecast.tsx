@@ -47,7 +47,9 @@ export const CurrentForecast = ({
 
       <div className="flex h-5/6 flex-col items-center justify-center space-y-4 sm:space-y-2 md:space-y-0">
         <div className="flex items-center justify-center text-8xl font-semibold md:text-9xl">
-          {weather.forecast.forecastday[selectedDay].day.avgtemp_c}°
+          {localStorage.getItem("Temperature") === "Celsius"
+            ? weather.forecast.forecastday[selectedDay].day.avgtemp_c + " °C"
+            : weather.forecast.forecastday[selectedDay].day.avgtemp_f + " °F"}
         </div>
 
         <div className="flex w-full flex-col justify-between px-3 sm:max-w-80">
@@ -67,7 +69,11 @@ export const CurrentForecast = ({
           </div>
           <div className="flex w-full flex-col items-center justify-between">
             <div className="flex w-full items-center justify-between text-base text-slate-800 sm:text-xl md:text-2xl">
-              {weather.forecast.forecastday[selectedDay].day.avgvis_km} km/h
+              {localStorage.getItem("Wind") === "Kilometer"
+                ? weather.forecast.forecastday[selectedDay].day.maxwind_kph +
+                  " km/h"
+                : weather.forecast.forecastday[selectedDay].day.maxwind_mph +
+                  " mp/h"}
               <div className="flex h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14">
                 <img src="/wind.png" alt="Condition Icon" />
               </div>
