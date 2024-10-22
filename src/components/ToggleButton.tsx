@@ -22,36 +22,40 @@ export const ToggleButton = ({
   };
 
   return (
-    <div>
-      <div className="flex">
-        <input
-          type="radio"
-          onChange={(e) => {}}
-          name={`hs-default-radio-${toggleReference}`}
-          value={target[0]}
-          checked={CheckedBox === target[0]}
-          className="mt-0.5 shrink-0 rounded-full border-gray-200 text-blue-600 focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-800 dark:checked:border-blue-500 dark:checked:bg-blue-500 dark:focus:ring-offset-gray-800"
-          id={`hs-default-radio-${toggleReference}`}
-          onClick={() => {
-            handleToggle(toggleReference, target[0]);
-          }}
-        />
-        <label
-          htmlFor={`hs-default-radio-${toggleReference}`}
-          className="ms-2 text-sm text-gray-500 dark:text-neutral-400"
-        >
-          {target[0]}
-        </label>
+    <div className="flex flex-row space-x-2">
+      <div className="flex flex-col justify-center space-y-1">
+        <div className="flex justify-center">
+          <label
+            htmlFor={`hs-default-radio-${toggleReference}`}
+            className="text-center text-lg"
+          >
+            {target[0]}
+          </label>
+        </div>
+        <div className="flex justify-center">
+          <input
+            className="h-5 w-5 accent-sky-600"
+            type="radio"
+            onChange={(e) => {}}
+            name={`hs-default-radio-${toggleReference}`}
+            value={target[0]}
+            checked={CheckedBox === target[0]}
+            id={`hs-default-radio-${toggleReference}`}
+            onClick={() => {
+              handleToggle(toggleReference, target[0]);
+            }}
+          />
+        </div>
       </div>
 
       <div className="flex">
         <input
+          className="accent-sky-600"
           onChange={(e) => {}}
           type="radio"
           name={`hs-default-radio-${toggleReference}`}
           value={target[1]}
           checked={CheckedBox === target[1]}
-          className="mt-0.5 shrink-0 rounded-full border-gray-200 text-blue-600 focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-800 dark:checked:border-blue-500 dark:checked:bg-blue-500 dark:focus:ring-offset-gray-800"
           id={`hs-default-radio-${toggleReference}`}
           onClick={() => {
             handleToggle(toggleReference, target[1]);
