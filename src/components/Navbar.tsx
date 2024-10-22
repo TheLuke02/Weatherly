@@ -26,15 +26,11 @@ export default function Navbar() {
       localStorage.setItem("Temperature", "Celsius");
     }
     if (localStorage.getItem("Wind") === null) {
-      localStorage.setItem("Wind", "kilometer");
+      localStorage.setItem("Wind", "Kilometer");
     }
     if (localStorage.getItem("Lenguage") === null) {
       localStorage.setItem("Lenguage", "en");
     }
-    console.log(
-      localStorage.getItem("Temperature"),
-      localStorage.getItem("Wind"),
-    );
   });
 
   return (

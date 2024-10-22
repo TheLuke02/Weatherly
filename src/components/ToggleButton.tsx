@@ -12,13 +12,11 @@ export const ToggleButton = ({
   const handleToggle = (toggleReference: string, target: string) => {
     if (toggleReference === "Temperature") {
       localStorage.setItem("Temperature", target);
-      console.log("Setto Temperature: ", target);
       setCheckedBox(target);
     }
 
     if (toggleReference === "Wind") {
       localStorage.setItem("Wind", target);
-      console.log("Setto Wind: ", target);
       setCheckedBox(target);
     }
   };
