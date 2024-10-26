@@ -27,14 +27,14 @@ export const ToggleButton = ({
         <div className="flex justify-center">
           <label
             htmlFor={`hs-default-radio-${toggleReference}`}
-            className="text-center text-lg"
+            className="text-center text-lg sm:text-2xl md:text-3xl"
           >
             {target[0]}
           </label>
         </div>
         <div className="flex justify-center">
           <input
-            className="h-5 w-5 accent-sky-600"
+            className="h-5 w-5 accent-sky-600 sm:h-6 sm:w-6 md:h-8 md:w-8"
             type="radio"
             onChange={(e) => {}}
             name={`hs-default-radio-${toggleReference}`}
@@ -52,14 +52,14 @@ export const ToggleButton = ({
         <div className="flex justify-center">
           <label
             htmlFor={`hs-default-radio-${toggleReference}`}
-            className="text-center text-lg"
+            className="text-center text-lg sm:text-2xl md:text-3xl"
           >
             {target[1]}
           </label>
         </div>
         <div className="flex justify-center">
           <input
-            className="h-5 w-5 accent-sky-600"
+            className="h-5 w-5 accent-sky-600 sm:h-6 sm:w-6 md:h-8 md:w-8"
             type="radio"
             onChange={(e) => {}}
             name={`hs-default-radio-${toggleReference}`}
@@ -75,35 +75,3 @@ export const ToggleButton = ({
     </div>
   );
 };
-/*
-    <div
-      className="inline-flex items-center gap-2"
-      onClick={() => handleToggle(toggleReference)}
-    >
-      <label
-        htmlFor={`switch-component-on-${toggleReference}`}
-        className="cursor-pointer text-sm text-slate-600"
-      >
-        {target[0]}
-      </label>
-
-      <div className="relative inline-block h-5 w-11">
-        <input
-          id={`switch-component-on-${toggleReference}`}
-          type="checkbox"
-          className="peer h-5 w-11 cursor-pointer appearance-none rounded-full bg-sky-600 transition-colors duration-300"
-        />
-        <label
-          htmlFor={`switch-component-on-${toggleReference}`}
-          className="absolute left-0 top-0 h-5 w-5 cursor-pointer rounded-full border bg-white shadow-sm transition-transform duration-300 peer-checked:translate-x-6"
-        ></label>
-      </div>
-
-      <label
-        htmlFor={`switch-component-on-${toggleReference}`}
-        className="cursor-pointer text-sm text-slate-600"
-      >
-        {target[1]}
-      </label>
-    </div>
-    */
