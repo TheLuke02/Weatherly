@@ -22,7 +22,7 @@ export const ToggleButton = ({
   };
 
   return (
-    <div className="flex flex-row space-x-2">
+    <div className="flex flex-row space-x-6">
       <div className="flex flex-col justify-center space-y-1">
         <div className="flex justify-center">
           <label
@@ -48,25 +48,29 @@ export const ToggleButton = ({
         </div>
       </div>
 
-      <div className="flex">
-        <input
-          className="accent-sky-600"
-          onChange={(e) => {}}
-          type="radio"
-          name={`hs-default-radio-${toggleReference}`}
-          value={target[1]}
-          checked={CheckedBox === target[1]}
-          id={`hs-default-radio-${toggleReference}`}
-          onClick={() => {
-            handleToggle(toggleReference, target[1]);
-          }}
-        />
-        <label
-          htmlFor={`hs-default-radio-${toggleReference}`}
-          className="ms-2 text-sm text-gray-500 dark:text-neutral-400"
-        >
-          {target[1]}
-        </label>
+      <div className="flex flex-col justify-center space-y-1">
+        <div className="flex justify-center">
+          <label
+            htmlFor={`hs-default-radio-${toggleReference}`}
+            className="text-center text-lg"
+          >
+            {target[1]}
+          </label>
+        </div>
+        <div className="flex justify-center">
+          <input
+            className="h-5 w-5 accent-sky-600"
+            type="radio"
+            onChange={(e) => {}}
+            name={`hs-default-radio-${toggleReference}`}
+            value={target[1]}
+            checked={CheckedBox === target[1]}
+            id={`hs-default-radio-${toggleReference}`}
+            onClick={() => {
+              handleToggle(toggleReference, target[1]);
+            }}
+          />
+        </div>
       </div>
     </div>
   );

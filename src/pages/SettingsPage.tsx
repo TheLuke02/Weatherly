@@ -4,8 +4,8 @@ export const SettingsPage = () => {
   return (
     <div className="h-[calc(100vh-64px)]">
       <div className="flex h-full w-full justify-center">
-        <div className="flex h-full w-2/3 flex-col space-y-4 border-2 border-sky-600">
-          <div className="flex flex-col">
+        <div className="flex h-full w-full flex-col items-center justify-center space-y-20">
+          <div className="flex flex-col space-y-4">
             <div className="text-center text-3xl font-semibold">
               Temperature
             </div>
@@ -16,7 +16,7 @@ export const SettingsPage = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col space-y-4">
             <div className="text-center text-3xl font-semibold">Wind</div>
             <div className="flex justify-center">
               <ToggleButton
@@ -24,10 +24,6 @@ export const SettingsPage = () => {
                 toggleReference={"Wind"}
               />
             </div>
-          </div>
-          <div className="flex flex-col">
-            <div>Lenguage</div>
-            <div>Selezione lingua</div>
           </div>
         </div>
       </div>

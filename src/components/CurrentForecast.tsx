@@ -46,10 +46,22 @@ export const CurrentForecast = ({
       </div>
 
       <div className="flex h-5/6 flex-col items-center justify-center space-y-4 sm:space-y-2 md:space-y-0">
-        <div className="flex items-center justify-center text-8xl font-semibold md:text-9xl">
-          {localStorage.getItem("Temperature") === "Celsius"
-            ? weather.forecast.forecastday[selectedDay].day.avgtemp_c + " °C"
-            : weather.forecast.forecastday[selectedDay].day.avgtemp_f + " °F"}
+        <div className="flex flex-row">
+          {localStorage.getItem("Temperature") === "Celsius" ? (
+            <>
+              <div className="text-8xl font-semibold md:text-9xl">
+                {weather.forecast.forecastday[selectedDay].day.avgtemp_c}
+              </div>
+              <div className="text-3xl font-semibold md:text-4xl">°C</div>
+            </>
+          ) : (
+            <>
+              <div className="text-8xl font-semibold md:text-9xl">
+                {weather.forecast.forecastday[selectedDay].day.avgtemp_f}
+              </div>
+              <div className="text-3xl font-semibold md:text-4xl">°F</div>
+            </>
+          )}
         </div>
 
         <div className="flex w-full flex-col justify-between px-3 sm:max-w-80">

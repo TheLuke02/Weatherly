@@ -26,13 +26,26 @@ export const DailyForecast = ({
           <div className="flex justify-center px-1 font-semibold sm:text-xl md:text-2xl">
             Today
           </div>
-          <div className="flex font-bold sm:text-xl md:text-2xl">
-            {localStorage.getItem("Temperature") === "Celsius"
-              ? weather.forecast.forecastday[0].day.avgtemp_c + " °C"
-              : weather.forecast.forecastday[0].day.avgtemp_f + " °F"}
+          <div className="flex font-bold">
+            {localStorage.getItem("Temperature") === "Celsius" ? (
+              <>
+                <div className="sm:text-xl md:text-2xl">
+                  {weather.forecast.forecastday[0].day.avgtemp_c}
+                </div>
+                <div className="text-sm sm:text-base md:text-lg">°C</div>
+              </>
+            ) : (
+              <>
+                <div className="sm:text-xl md:text-2xl">
+                  {weather.forecast.forecastday[0].day.avgtemp_f}
+                </div>
+                <div className="text-sm sm:text-base md:text-lg">°F</div>
+              </>
+            )}
           </div>
         </div>
       </button>
+
       <button
         className="flex flex-1"
         onClick={() => {
@@ -46,9 +59,21 @@ export const DailyForecast = ({
             {tomorrow.substring(5)}
           </div>
           <div className="flex font-bold sm:text-xl md:text-2xl">
-            {localStorage.getItem("Temperature") === "Celsius"
-              ? weather.forecast.forecastday[1].day.avgtemp_c + " °C"
-              : weather.forecast.forecastday[1].day.avgtemp_f + " °F"}
+            {localStorage.getItem("Temperature") === "Celsius" ? (
+              <>
+                <div className="sm:text-xl md:text-2xl">
+                  {weather.forecast.forecastday[1].day.avgtemp_c}
+                </div>
+                <div className="text-sm sm:text-base md:text-lg">°C</div>
+              </>
+            ) : (
+              <>
+                <div className="sm:text-xl md:text-2xl">
+                  {weather.forecast.forecastday[1].day.avgtemp_f}
+                </div>
+                <div className="text-sm sm:text-base md:text-lg">°F</div>
+              </>
+            )}
           </div>
         </div>
       </button>
@@ -65,9 +90,21 @@ export const DailyForecast = ({
             {afterTomorrow.substring(5)}
           </div>
           <div className="flex font-bold sm:text-xl md:text-2xl">
-            {localStorage.getItem("Temperature") === "Celsius"
-              ? weather.forecast.forecastday[2].day.avgtemp_c + " °C"
-              : weather.forecast.forecastday[2].day.avgtemp_f + " °F"}
+            {localStorage.getItem("Temperature") === "Celsius" ? (
+              <>
+                <div className="text-base sm:text-xl md:text-2xl">
+                  {weather.forecast.forecastday[2].day.avgtemp_c}
+                </div>
+                <div className="text-sm sm:text-base md:text-lg">°C</div>
+              </>
+            ) : (
+              <>
+                <div className="text-base sm:text-xl md:text-2xl">
+                  {weather.forecast.forecastday[2].day.avgtemp_f}
+                </div>
+                <div className="text-sm sm:text-base md:text-lg">°F</div>
+              </>
+            )}
           </div>
         </div>
       </button>

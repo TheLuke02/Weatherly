@@ -18,9 +18,15 @@ export const HourlyForecast = ({
                 <div className="mt-4 text-lg sm:text-2xl md:text-3xl">
                   {item.time.split(" ")[1]}
                 </div>
-                <div className="text-xl font-bold sm:text-xl md:text-2xl">
-                  {item.temp_c}°C
+                <div className="flex flex-row">
+                  <div className="text-xl font-bold sm:text-xl md:text-2xl">
+                    {item.temp_c}
+                  </div>
+                  <div className="text-sm font-bold sm:text-base md:text-lg">
+                    °C
+                  </div>
                 </div>
+
                 <div className="mb-4 text-center font-semibold sm:text-lg md:text-xl">
                   {item.condition.text}
                 </div>
@@ -37,9 +43,15 @@ export const HourlyForecast = ({
                 <div className="mt-4 text-lg sm:text-2xl md:text-3xl">
                   {item.time.split(" ")[1]}
                 </div>
-                <div className="text-xl font-bold sm:text-xl md:text-2xl">
-                  {item.temp_f}°F
+                <div className="flex flex-row">
+                  <div className="text-xl font-bold sm:text-xl md:text-2xl">
+                    {item.temp_f}
+                  </div>
+                  <div className="text-sm font-bold sm:text-base md:text-lg">
+                    °F
+                  </div>
                 </div>
+
                 <div className="mb-4 text-center font-semibold sm:text-lg md:text-xl">
                   {item.condition.text}
                 </div>
